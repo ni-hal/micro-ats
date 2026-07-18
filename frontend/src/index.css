@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --- color tokens --- */
+  --bg: #0f1a1c;
+  --panel: #16262a;
+  --panel-alt: #1d3136;
+  --panel-raised: #23393f;
+  --grid-line: #2a4046;
+  --text-primary: #eaf2f1;
+  --text-dim: #8fa8a6;
+  --text-faint: #5c7573;
+
+  --accent-cyan: #4fd1c5;
+  --accent-cyan-dim: rgba(79, 209, 197, 0.16);
+  --accent-amber: #f2b84b;
+  --accent-amber-dim: rgba(242, 184, 75, 0.16);
+  --accent-coral: #ff6b5e;
+  --accent-coral-dim: rgba(255, 107, 94, 0.18);
+  --accent-violet: #b39bff;
+  --accent-violet-dim: rgba(179, 155, 255, 0.16);
+
+  /* --- type --- */
+  --font-ui: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: radial-gradient(circle at 15% 0%, rgba(79, 209, 197, 0.05), transparent 45%),
+    radial-gradient(circle at 85% 100%, rgba(179, 155, 255, 0.04), transparent 45%);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent-cyan-dim);
+}
+
+/* focus visibility, kept everywhere per accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
