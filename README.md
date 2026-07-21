@@ -14,7 +14,7 @@ A full-stack interview scheduling application for recruitment teams. It lets rec
 
 ## Tech stack
 
-- Frontend: React, Vite, Tailwind CSS
+- Frontend: Next.js, React, Tailwind CSS
 - Backend: Node.js, Express, MongoDB, Mongoose
 - Authentication: JWT and bcrypt password hashing
 
@@ -59,7 +59,10 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`. Vite proxies `/api` requests to the backend.
+Open `http://localhost:3000`. Configure the API target with `API_BACKEND_URL`.
+It must be a distinct backend deployment URL—not the frontend's own Vercel URL—or requests will loop.
+Use only the backend origin (for example, `https://api.example.com`), not an origin ending in `/api`.
+For local development, set `API_BACKEND_URL=http://localhost:5000` in `frontend/.env.local`.
 
 ## Core API
 
